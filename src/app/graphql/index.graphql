@@ -1,0 +1,33 @@
+query FindUser($id: String!) {
+  findUser(id: $id) {
+    fullName
+    email
+    phoneNumber
+    roles {
+      role
+      id
+    }
+  }
+}
+
+mutation LOGIN($login: LoginInput!) {
+  login(login: $login) {
+    token
+    email
+    roles
+    userId
+  }
+}
+
+query CURRENT_USER {
+  me {
+    id
+    fullName
+    email
+    roles {
+      role
+      id
+    }
+    phoneNumber
+  }
+}
