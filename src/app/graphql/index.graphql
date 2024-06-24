@@ -31,3 +31,14 @@ query CURRENT_USER {
     phoneNumber
   }
 }
+
+mutation CREATEUSER($userInput: CreateUserInput!) {
+  createUser(
+    createUserInput: $userInput
+  ) {
+    token
+    userId
+    roles
+    email
+}
+}
